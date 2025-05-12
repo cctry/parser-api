@@ -21,10 +21,5 @@
     "eslint-config-prettier": "^4.0.0",
     "jest": "^24.1.0",
     "prettier": "^1.14.2"
-  },
-  "resolutions": {
-    "difflib": "git+https://github.com/extractus/difflib.js.git#9f729d2",
-    "mercury-schema": "git+https://github.com/extractus/mercury-schema.git#v0.1.0",
-    "node-readability": "git+https://github.com/extractus/node-readability.git#03064a4"
   }
 }
