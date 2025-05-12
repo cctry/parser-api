@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/parser",
+      "dest": "/api/parser.js"
+    },
+    {
+      "src": "/parse-html",
+      "dest": "/api/parse-html.js"
+    }
+  ]
+}
