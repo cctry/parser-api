@@ -11,7 +11,9 @@
     "dev": "vercel dev"
   },
   "dependencies": {
-    "@postlight/parser": "^2.2.2"
+    "@postlight/parser": "^2.2.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",

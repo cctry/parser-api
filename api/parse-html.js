@@ -37,15 +37,12 @@ export default async function handler(req, res) {
   try {
     const result = await Parser.parse(url, { html });
     if (result) {
-      res.writeHead(200, corsHeaders);
-      res.json(result);
+      res.status(200).set(corsHeaders).json(result);
     } else {
-      res.writeHead(500, corsHeaders);
-      res.json({ error: 'There was an error parsing the HTML.' });
+      res.status(500).set(corsHeaders).json({ error: 'There was an error parsing the HTML.' });
     }
   } catch (error) {
     console.error(error);
-    res.writeHead(500, corsHeaders);
-    res.json({ error: 'An unexpected error occurred.', details: error.message });
+    res.status(500).set(corsHeaders).json({ error: 'An unexpected error occurred.', details: error.message });
   }
 }
