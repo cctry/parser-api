@@ -37,12 +37,21 @@ export default async function handler(req, res) {
   try {
     const result = await Parser.parse(url, { html });
     if (result) {
-      res.status(200).set(corsHeaders).json(result);
+      Object.entries(corsHeaders).forEach(([key, value]) => {
+        res.setHeader(key, value);
+      });
+      res.status(200).json(result);
     } else {
-      res.status(500).set(corsHeaders).json({ error: 'There was an error parsing the HTML.' });
+      Object.entries(corsHeaders).forEach(([key, value]) => {
+        res.setHeader(key, value);
+      });
+      res.status(500).json({ error: 'There was an error parsing the HTML.' });
     }
   } catch (error) {
     console.error(error);
-    res.status(500).set(corsHeaders).json({ error: 'An unexpected error occurred.', details: error.message });
+    Object.entries(corsHeaders).forEach(([key, value]) => {
+      res.setHeader(key, value);
+    });
+    res.status(500).json({ error: 'An unexpected error occurred.', details: error.message });
   }
 }
