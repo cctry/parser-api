@@ -35,7 +35,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const result = await Parser.parse(url, { html });
+    const result = await Parser.parse(url, { html, contentType: 'text/html; charset=utf-8' });
     if (result) {
       Object.entries(corsHeaders).forEach(([key, value]) => {
         res.setHeader(key, value);

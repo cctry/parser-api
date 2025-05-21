@@ -1,4 +1,5 @@
 import Parser from '@postlight/parser';
+import fetch from 'node-fetch';
 
 // CORS headers
 const corsHeaders = {
@@ -30,7 +31,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const result = await Parser.parse(url);
+    const response = await fetch(url);
+    const html = await response.text();
+    const result = await Parser.parse(url, { html, contentType: 'text/html; charset=utf-8' });
     if (result) {
       Object.entries(corsHeaders).forEach(([key, value]) => {
         res.setHeader(key, value);

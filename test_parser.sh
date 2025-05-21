@@ -16,7 +16,8 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-URL="https://sspai.com/post/99117"
+# URL="https://sspai.com/post/99117"
+URL="https://www.huxiu.com/article/4375771.html"
 
 echo -e "\n${BLUE}🔍 Testing /parser endpoint with URL: $URL${NC}"
 echo "GET $API_BASE/parser?url=$URL"
