@@ -4,6 +4,7 @@
   "author": "Postlight",
   "description": "The serverless Postlight Parser API",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "eslint ./api --fix",
     "test": "jest",
